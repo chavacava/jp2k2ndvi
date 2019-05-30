@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 ###############################################################################
-#                   How to: Calculate NDVI from Sentinel-2A                   #
+#                   How to: Calculate NDVI from Satellite imges               #
 ###############################################################################
-# @author: Cole Krehbiel                                                      #  
-# Last Updated: 10-18-17                                                      #  
+# Based on the code by Cole Krehbiel                                          #  
+# Last Updated: 30-05-19                                                      #  
 ###############################################################################
 """
 # Import libraries
@@ -34,7 +34,6 @@ nir = nir_link.ReadAsArray().astype(np.float)
 ndvi2 = ndvi(red, nir)
 
 # Create output filename based on input name 
-#outfile_name = red_file[0].split('_B')[0] + '_NDVI.tif'
 outfile_name = sys.argv[3]+'_NDVI.tif'
 
 x_pixels = ndvi2.shape[0]  # number of pixels in x
